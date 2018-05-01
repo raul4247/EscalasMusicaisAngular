@@ -1,0 +1,26 @@
+<h1>Escalas Musicais</h1>
+
+<label>
+	Tom:
+	<select (change)="tryToCreate($event.target.value,'key')">
+	    <option [value]="null" hidden>Selecione o tom</option>
+		<option *ngFor="let note of MUSICALNOTES" [value]="note">
+			{{note}}
+		</option>
+	</select>
+</label>
+<label>
+	Tipo:
+	<select (change)="tryToCreate($event.target.value,'type')">
+	    <option [value]="null" hidden>Selecione o tipo</option>
+		<option *ngFor="let type of SCALETYPES" [value]="type">
+			{{type}}
+		</option>
+	</select>
+</label>
+<table>
+	<th>Escala de{{scale.key}} {{scale.type}}</th>
+	<tr>
+		<td *ngFor="let note of scale.notes">{{note}}</td>
+	</tr>
+</table>
