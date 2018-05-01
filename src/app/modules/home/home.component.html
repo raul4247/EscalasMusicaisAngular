@@ -18,9 +18,14 @@
 		</option>
 	</select>
 </label>
+
+<h2>Escala de{{scale.key}} {{scale.type}}</h2>
+
 <table>
-	<th>Escala de{{scale.key}} {{scale.type}}</th>
 	<tr>
-		<td *ngFor="let note of scale.notes">{{note}}</td>
+		<td *ngFor="let fret of FRETS">{{fret}}</td>
+	</tr>
+	<tr *ngFor="let note of TUNNING">
+		<td *ngFor="let n of FRETS" [ngClass]="isNoteOnScale(stringNote(n,note)) ? 'color': 'std'">{{stringNote(n,note)}}</td>
 	</tr>
 </table>

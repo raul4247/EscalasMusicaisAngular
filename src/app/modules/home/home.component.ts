@@ -8,10 +8,13 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
 	MUSICALNOTES = ['A','A#','B','C','C#','D','D#','E','F','F#','G','G#']
 	SCALETYPES = ['Maior','Menor']
-	
+	FRETS = Array.from(Array(22).keys())
+	TUNNING = ["E","B","G","D","A","E"]
+
 	scale = {key: '', type:'', notes: []}
 
-	constructor(){}
+	constructor(){
+	}
 	ngOnInit(){}
 
 	majorScale(key){
@@ -51,5 +54,16 @@ export class HomeComponent implements OnInit {
 			else if(this.scale.type=='Menor')
 				this.scale.notes = this.minorScale(this.scale.key)				
 		}
+	}
+
+	isNoteOnScale(note){
+		if(this.scale.notes.includes(note))
+			return true
+		else 
+			return false
+	}
+	stringNote(fret,key){
+		let start = this.MUSICALNOTES.findIndex(notes => notes===key)
+		return this.MUSICALNOTES[(start+fret)%12]
 	}
 }
