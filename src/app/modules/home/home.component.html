@@ -29,3 +29,43 @@
 		<td *ngFor="let n of FRETS" [ngClass]="isNoteOnScale(stringNote(n,note)) ? 'color': 'std'">{{stringNote(n,note)}}</td>
 	</tr>
 </table>
+
+
+<div class="guitar-neck">		
+	<div class="fret first"></div>
+	<div class="fret"></div>
+	<div class="fret"></div>
+	<div class="fret"></div>
+	<div class="fret"></div>
+	<div class="fret"></div>
+	<div class="fret"></div>
+	<div class="fret"></div>
+	<div class="fret"></div>
+	<div class="fret"></div>
+	<div class="fret"></div>
+	<div class="fret"></div>	
+	
+	<ul class="dots">
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+	<ul class="strings">
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+	
+	<ul class="open-notes">
+		<li class="low-e">E</li>
+		<li class="b">B</li>
+		<li class="g">G</li>
+		<li class="d">D</li>
+		<li class="a">A</li>
+		<li class="high-e">E</li>
+	</ul>
+</div>
